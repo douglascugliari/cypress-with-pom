@@ -63,6 +63,6 @@ export class ProductPage {
     }
 
     waitListProductsLoaded() {
-        cy.get('tbody tr').should('have.length.greaterThan', 0)
+        cy.waitForElementVisible('tbody tr', 10000)
     }
 }
