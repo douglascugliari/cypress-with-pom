@@ -1,0 +1,17 @@
+{
+	"name": "Cypress Testing Framework",
+	"version": "1.0.0",
+	"description": "A testing framework for end-to-end testing of web applications using Cypress.",
+	"main": "index.js",
+	"type": "module",
+	"scripts": {
+		"test": "cypress run",
+		"open": "cypress open"
+	},
+	"author": "Douglas Panizza Cugliari dos Santos",
+	"license": "MIT",
+	"devDependencies": {
+		"@testing-library/cypress": "^10.1.0",
+		"cypress": "^15.10.0"
+	}
+}

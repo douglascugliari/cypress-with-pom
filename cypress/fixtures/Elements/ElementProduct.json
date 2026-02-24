@@ -1,0 +1,10 @@
+{
+    "nameInput": "[data-testid='nome']",
+    "priceInput": "[data-testid='preco']",
+    "descriptionInput": "[data-testid='descricao']",
+    "quantityInput": "[data-testid='quantity']",
+    "registerButton": "[data-testid='cadastarProdutos']",
+    "listProduct": "[data-testid='listar-produtos']",
+    "registerProductsMenu": "[data-testid='cadastrar-produtos']",
+    "duplicateNameMessage": "Já existe produto com esse nome"
+}

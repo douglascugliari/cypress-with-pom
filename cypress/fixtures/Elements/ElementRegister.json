@@ -1,0 +1,9 @@
+{
+    "urlRegister": "https://front.serverest.dev/cadastrarusuarios",
+    "nameInput": "[data-testid='nome']",
+    "emailInput": "[data-testid='email']",
+    "passwordInput": "[data-testid='password']",
+    "registerButton": "[data-testid='cadastrar']",
+    "successMessage": "Cadastro realizado com sucesso",
+    "erroMessageEmailInvalid": "Formato de email inválido"
+}
