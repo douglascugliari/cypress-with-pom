@@ -1,6 +1,6 @@
-import ObjectsPage from '../../fixtures/Elements/ElementRegister.json'
+const ObjectsPage = require('../../fixtures/Elements/ElementRegister.json')
 
-export class RegisterPage {
+module.exports = class RegisterPage {
     visit() {
         cy.visit(ObjectsPage.urlRegister)
     }

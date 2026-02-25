@@ -1,7 +1,7 @@
-import ObjectsPage from '../../fixtures/Elements/ElementLogin.json'
-import '@testing-library/cypress/add-commands'
+const ObjectsPage = require('../../fixtures/Elements/ElementLogin.json')
+require('@testing-library/cypress/add-commands')
 
-export class LoginPage {
+module.exports = class LoginPage {
     visit() {
         cy.visit(ObjectsPage.url)
     }

@@ -1,5 +1,5 @@
-import { RegisterPage } from '../support/pages/RegisterPage'
-import { RegisterData } from '../fixtures/TestData/Register/RegisterData'
+const RegisterPage = require('../support/pages/RegisterPage')
+const RegisterData = require('../fixtures/TestData/Register/RegisterData')
 
 const registerPage = new RegisterPage()
 

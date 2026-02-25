@@ -1,6 +1,6 @@
-import { LoginPage } from '../support/pages/LoginPage'
-import createLoginData from '../fixtures/Factories/LoginFactory'
-import { LoginData } from '../fixtures/TestData/Login/LoginData'
+const LoginPage = require('../support/pages/LoginPage')
+const createLoginData = require('../fixtures/Factories/LoginFactory')
+const LoginData = require('../fixtures/TestData/Login/LoginData')
 
 const loginPage = new LoginPage()
 

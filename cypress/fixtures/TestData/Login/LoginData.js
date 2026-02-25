@@ -1,4 +1,4 @@
-export class LoginData {
+module.exports = class LoginData {
 
     static loginValid() {
         const compEmail = Math.random().toString(36).substring(2, 15)

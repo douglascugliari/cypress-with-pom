@@ -1,4 +1,4 @@
-export class ProductData {
+module.exports = class ProductData {
 
     static productValid() {
         return {

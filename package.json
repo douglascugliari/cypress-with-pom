@@ -3,7 +3,6 @@
 	"version": "1.0.0",
 	"description": "A testing framework for end-to-end testing of web applications using Cypress.",
 	"main": "index.js",
-	"type": "module",
 	"scripts": {
 		"test": "cypress run",
 		"open": "cypress open"

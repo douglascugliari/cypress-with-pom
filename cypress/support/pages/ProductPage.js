@@ -1,7 +1,7 @@
 
-import ObjectsPage from '../../fixtures/Elements/ElementProduct.json'
+const ObjectsPage = require('../../fixtures/Elements/ElementProduct.json')
 
-export class ProductPage {
+module.exports = class ProductPage {
 
     visit() {
         cy.url().should('include', '/admin/home')

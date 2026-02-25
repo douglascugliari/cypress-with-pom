@@ -27,4 +27,4 @@ function createLoginData(user) {
     })
 }
 
-export default createLoginData
+module.exports = createLoginData

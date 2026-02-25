@@ -1,9 +1,9 @@
 
-import { ProductPage } from '../support/pages/ProductPage'
-import createLoginData from '../fixtures/Factories/LoginFactory'
-import { LoginData } from '../fixtures/TestData/Login/LoginData'
-import { LoginPage } from '../support/pages/LoginPage'
-import { ProductData } from '../fixtures/TestData/Product/ProductData'
+const ProductPage = require('../support/pages/ProductPage')
+const createLoginData = require('../fixtures/Factories/LoginFactory')
+const LoginData = require('../fixtures/TestData/Login/LoginData')
+const LoginPage = require('../support/pages/LoginPage')
+const ProductData = require('../fixtures/TestData/Product/ProductData')
 
 describe('Product Management', () => {
 

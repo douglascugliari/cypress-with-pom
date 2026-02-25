@@ -1,4 +1,4 @@
-export class RegisterData {
+module.exports = class RegisterData {
 
     static registerValid() {
         return {
