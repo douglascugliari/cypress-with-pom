@@ -4,13 +4,25 @@
 	"description": "A testing framework for end-to-end testing of web applications using Cypress.",
 	"main": "index.js",
 	"scripts": {
-		"test": "cypress run",
-		"open": "cypress open"
+		"cy:run": "cypress run",
+		"cy:run:headed": "cypress run --headed",
+		"cy:open": "cypress open",
+		"report:merge": "mochawesome-merge 'cypress/reports/mocha/mochawesome*.json' -o cypress/reports/output.json",
+		"report:generate": "marge cypress/reports/output.json --reportDir cypress/reports/html --inline --videoDir cypress/reports/videos && cp -R cypress/reports/videos cypress/reports/html/videos",
+		"report:clean": "rm -rf cypress/reports/mocha && rm -rf cypress/reports/html",
+		"test:report": "npm run report:clean && npm run cy:run && npm run report:merge && npm run report:generate"
 	},
 	"author": "Douglas Panizza Cugliari dos Santos",
 	"license": "MIT",
 	"devDependencies": {
 		"@testing-library/cypress": "^10.1.0",
-		"cypress": "^15.10.0"
+		"cypress": "^15.10.0",
+		"cypress-multi-reporters": "^2.0.5",
+		"mocha": "^11.7.5",
+		"mochawesome": "^7.1.4",
+		"mochawesome-merge": "^5.1.1",
+		"mochawesome-report-generator": "^6.3.2",
+		"cypress-mochawesome-reporter": "^3.1.5",
+		"@faker-js/faker": "^9.3.0"
 	}
 }

@@ -6,5 +6,6 @@
     "registerButton": "[data-testid='cadastarProdutos']",
     "listProduct": "[data-testid='listar-produtos']",
     "registerProductsMenu": "[data-testid='cadastrar-produtos']",
-    "duplicateNameMessage": "Já existe produto com esse nome"
+    "duplicateNameMessage": "Já existe produto com esse nome",
+    "productTable": "tbody tr td"
 }

@@ -1,6 +1,7 @@
 const LoginPage = require('../support/pages/LoginPage')
-const createLoginData = require('../fixtures/Factories/LoginFactory')
-const LoginData = require('../fixtures/TestData/Login/LoginData')
+const { createUserAPI } = require('../services/userService')
+const loginMessages = require('../fixtures/messages/login/loginMessages')
+const loginFactory = require('../fixtures/factories/loginFactory')
 
 const loginPage = new LoginPage()
 
@@ -11,7 +12,7 @@ describe('Login', () => {
     })
 
     it('TC-001: Login with valid credentials', function () {
-        createLoginData(LoginData.loginValid())
+        createUserAPI(loginFactory.createLoginValid())
             .then(user => {
                 loginPage.login(user)
             })
@@ -21,22 +22,22 @@ describe('Login', () => {
 
 
     it('TC-002: Login with invalid credentials', function () {
-        loginPage.login(LoginData.loginInvalid())
-        loginPage.verifyLoginError(LoginData.mensagesErrorLoginInvalid())
+        loginPage.login(loginFactory.createLoginInvalid())
+        loginPage.verifyLoginError(loginMessages.mensagesErrorLoginInvalid())
     })
 
     it('TC-003: Login with empty fields', function () {
         loginPage.clickLoginButton()
-        loginPage.verifyLoginErrorMultiple(LoginData.mensagesErrorMultiple())
+        loginPage.verifyLoginErrorMultiple(loginMessages.mensagesErrorMultiple())
     })
 
     it('TC-004: Email format validation', function () {
-        loginPage.login(LoginData.emailFormatInvalid())
+        loginPage.login(loginFactory.createEmailFormatInvalid())
         loginPage.validatedLoginFailureInput()
     })
 
     it('TC-005: Redirection based on user profile', function () {
-        createLoginData(LoginData.loginValid())
+        createUserAPI(loginFactory.createLoginValid())
             .then(user => {
                 loginPage.login(user)
             })

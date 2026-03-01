@@ -1,30 +1,25 @@
 const { faker } = require('@faker-js/faker');
 
 module.exports = {
-    createLoginValid: () => {
+    createUserValid: () => {
+        const name = faker.person.firstName();
         const email = faker.internet.email();
         const password = faker.internet.password();
         return {
+            name,
             email,
             password
         };
     },
 
-    createLoginInvalid: () => {
-        const email = faker.internet.email();
-        const password = faker.internet.password();
-        return {
-            email,
-            password
-        };
-    },
-
-    createEmailFormatInvalid: () => {
+    createUserInvalid: () => {
+        const name = faker.person.firstName();
         const email = 'emailinvalido';
         const password = faker.internet.password();
         return {
+            name,
             email,
             password
         };
     }
-}
+};

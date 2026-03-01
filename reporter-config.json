@@ -1,0 +1,23 @@
+{
+    "reporterEnabled": "mochawesome",
+    "mochawesomeReporterOptions": {
+        "reportDir": "cypress/reports/mocha",
+        "reportFilename": "mochawesome.json",
+        "quiet": false,
+        "overwrite": false,
+        "html": true,
+        "json": true,
+        "timestamp": "dd/mm/yyyy HH:mm:ss",
+        "charts": true,
+        "pageTitle": "Relatório de Testes Automatizados - Cypress",
+        "inline": false,
+        "openReport": false,
+        "testCasesSortBy": "status",
+        "theme": "dark",
+        "embeddedScreenshots": true,
+        "embeddedVideos": true,
+        "ignoreVideos": false,
+        "videoOnFailOnly": false,
+        "inlineVideos": true
+    }
+}

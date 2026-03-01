@@ -41,7 +41,7 @@ module.exports = class ProductPage {
     }
 
     verifyRegisterSuccess(nameProduct) {
-        cy.get('tbody tr td').contains(nameProduct).should('be.visible')
+        cy.get(ObjectsPage.productTable).contains(nameProduct).should('be.visible')
     }
 
     verifyRegisterFailure(messages) {
@@ -51,11 +51,11 @@ module.exports = class ProductPage {
     }
 
     deleteProduct(nameProduct) {
-        cy.get('tbody tr td').contains(nameProduct).parent().find('button').contains('Excluir').click()
+        cy.get(ObjectsPage.productTable).contains(nameProduct).parent().find('button').contains('Excluir').click()
     }
 
     verifyDeleteSuccess(nameProduct) {
-        cy.get('tbody tr td').contains(nameProduct).should('not.exist')
+        cy.get(ObjectsPage.productTable).contains(nameProduct).should('not.exist')
     }
 
     verifyRegisterFailureDuplicate() {
@@ -63,6 +63,6 @@ module.exports = class ProductPage {
     }
 
     waitListProductsLoaded() {
-        cy.waitForElementVisible('tbody tr', 10000)
+        cy.waitForElementVisible(ObjectsPage.productTable, 10000)
     }
 }

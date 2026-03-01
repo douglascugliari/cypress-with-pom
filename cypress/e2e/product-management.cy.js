@@ -1,9 +1,10 @@
 
 const ProductPage = require('../support/pages/ProductPage')
-const createLoginData = require('../fixtures/Factories/LoginFactory')
-const LoginData = require('../fixtures/TestData/Login/LoginData')
+const loginFactory = require('../fixtures/factories/loginFactory')
 const LoginPage = require('../support/pages/LoginPage')
-const ProductData = require('../fixtures/TestData/Product/ProductData')
+const productFactory = require('../fixtures/factories/productFactory')
+const productMessages = require('../fixtures/messages/product/productMessages')
+const { createUserAPI } = require('../services/userService')
 
 describe('Product Management', () => {
 
@@ -12,7 +13,7 @@ describe('Product Management', () => {
 
     beforeEach(function () {
         loginPage.visit()
-        createLoginData(LoginData.loginValid())
+        createUserAPI(loginFactory.createLoginValid())
             .then(user => {
                 loginPage.login(user)
 
@@ -22,30 +23,30 @@ describe('Product Management', () => {
     })
 
     it('TC-010: Register new product successfully', function () {
-        const product = ProductData.productValid();
+        const product = productFactory.createProductValid();
         productPage.registerProduct(product);
         productPage.verifyRegisterSuccess(product.name);
     });
 
     it('TC-011: Register product with invalid fields', function () {
-        productPage.registerProduct(ProductData.productInvalid());
-        productPage.verifyRegisterFailure(ProductData.expectedMessagesError());
+        productPage.registerProduct(productFactory.createProductInvalid());
+        productPage.verifyRegisterFailure(productMessages.expectedMessagesError());
     });
 
     it('TC-012: Register product with empty fields', function () {
         productPage.clickRegisterButton();
-        productPage.verifyRegisterFailure(ProductData.expectedMessagesErrorMultiple());
+        productPage.verifyRegisterFailure(productMessages.expectedMessagesErrorMultiple());
     });
 
     it('TC-013: Delete product', function () {
-        const product = ProductData.productValid();
+        const product = productFactory.createProductValid();
         productPage.registerProduct(product);
         productPage.deleteProduct(product.name);
         productPage.verifyDeleteSuccess(product.name);
     });
 
     it('TC-014: Register product with duplicate name', function () {
-        const product = ProductData.productValid();
+        const product = productFactory.createProductValid();
         productPage.registerProduct(product);
         productPage.waitListProductsLoaded();
         productPage.clickRegisterProductsMenu();
