@@ -64,7 +64,7 @@ cypress/
 ├── e2e/                           # Casos de teste E2E
 │   ├── auth-login.cy.js           # Autenticação (TC-001 a TC-005)
 │   ├── product-management.cy.js   # Gestão de Produtos (TC-010 a TC-014)
-│   └── user-registraton.cy.js     # Registro de Usuários (TC-007 a TC-009)
+│   └── user-registration.cy.js     # Registro de Usuários (TC-007 a TC-009)
 ├── fixtures/                      # Massa de dados e configurações
 │   ├── elements/                  # Seletores CSS (JSON)
 │   │   ├── elementLogin.json
@@ -82,9 +82,9 @@ cypress/
 │   └── userService.js             # Criação de usuários via API
 ├── support/                       # Configurações e utilidades
 │   ├── pages/                     # Page Objects (POM)
-│   │   ├── LoginPage.js
-│   │   ├── ProductPage.js
-│   │   └── RegisterPage.js
+│   │   ├── loginPage.js
+│   │   ├── productPage.js
+│   │   └── registerPage.js
 │   ├── commands.js                # Comandos customizados
 │   └── e2e.js                     # Configurações globais
 └── reports/                       # Relatórios gerados
@@ -296,30 +296,22 @@ jobs:
 - Configurando ambientes de teste
 - Debugging com Cypress Studio
 
-## 📄 Licença
-
-Este projeto está licenciado sob a **Licença MIT** - veja o arquivo [LICENSE](LICENSE) para detalhes.
-
 ## 👤 Autor
 
 **Douglas Panizza Cugliari dos Santos**
 *Senior QA Engineer & Test Automation Specialist*
 
-- 🚀 **GitHub**: [@douglaspanizza](https://github.com/douglaspanizza)
-- 💼 **LinkedIn**: [douglas-panizza](https://linkedin.com/in/douglas-panizza)
-- 📧 **Email**: douglas.panizza@example.com
+- 🚀 **GitHub**: [@douglascugliari](https://github.com/douglascugliari)
+- 💼 **LinkedIn**: [Douglas Panizza Cugliari dos Santos](https://linkedin.com/in/douglascugliari)
+- 📧 **Email**: douglas.cugliari@hotmail.com
 
 ## 📞 Suporte
 
 ### 🆘 Canais de Ajuda
-- 🐛 **Bugs**: [GitHub Issues](https://github.com/douglaspanizza/cypress-with-pom/issues)
-- 💡 **Sugestões**: [GitHub Enhancement](https://github.com/douglaspanizza/cypress-with-pom/issues/new?labels=enhancement)
-- 📖 **Documentação**: [Project Wiki](https://github.com/douglaspanizza/cypress-with-pom/wiki)
+- 🐛 **Bugs**: [GitHub Issues](https://github.com/douglascugliari/cypress-with-pom/issues)
+- 💡 **Sugestões**: [GitHub Enhancement](https://github.com/douglascugliari/cypress-with-pom/issues/new?labels=enhancement)
+- 📖 **Documentação**: [Project Wiki](https://github.com/douglascugliari/cypress-with-pom/wiki)
 
-### ⚡ Tempo de Resposta
-- 🟢 **LinkedIn**: 24h úteis
-- 🟡 **GitHub Issues**: 48h
-- 🔴 **Email**: 72h úteis
 
 ---
 

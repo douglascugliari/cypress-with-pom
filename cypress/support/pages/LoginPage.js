@@ -2,26 +2,27 @@ const ObjectsPage = require('../../fixtures/Elements/ElementLogin.json')
 require('@testing-library/cypress/add-commands')
 
 module.exports = class LoginPage {
-    visit() {
-        cy.visit(ObjectsPage.url)
+    access() {
+        cy.visit('/')
     }
 
     fillEmail(email) {
         cy.get(ObjectsPage.emailInput).type(email)
+        return this;
     }
 
     fillPassword(password) {
         cy.get(ObjectsPage.passwordInput).type(password)
+        return this;
     }
 
     clickLoginButton() {
-        cy.get(ObjectsPage.loginButton).click()
+        cy.get(ObjectsPage.loginButton).click();
+        return this;
     }
 
     login({ email, password }) {
-        this.fillEmail(email)
-        this.fillPassword(password)
-        this.clickLoginButton()
+        this.fillEmail(email).fillPassword(password).clickLoginButton()
     }
 
     verifyLoginError(mensageError) {

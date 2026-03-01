@@ -1,5 +1,4 @@
 {
-    "urlRegister": "https://front.serverest.dev/cadastrarusuarios",
     "nameInput": "[data-testid='nome']",
     "emailInput": "[data-testid='email']",
     "passwordInput": "[data-testid='password']",

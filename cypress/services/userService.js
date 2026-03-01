@@ -1,4 +1,4 @@
-module.exports = {
+class UserService {
     createUserAPI(user) {
         const nome = user.nome || 'Fulano da Silva'
         const email = user.email || 'beltrano@qa.com.br'
@@ -13,7 +13,9 @@ module.exports = {
         }
 
         return cy.request({
-            method: 'POST', url: 'https://serverest.dev/usuarios', body: payload,
+            method: 'POST',
+            url: `${Cypress.env('apiBaseUrl')}/usuarios`,
+            body: payload,
             Headers: {
                 'Content-Type': 'application/json'
             }
@@ -28,4 +30,7 @@ module.exports = {
         })
     }
 }
+
+export default new UserService()
+
 

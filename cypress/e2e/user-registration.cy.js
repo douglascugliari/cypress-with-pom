@@ -7,7 +7,7 @@ const registerPage = new RegisterPage()
 describe('Register User', () => {
 
     beforeEach(function () {
-        registerPage.visit()
+        registerPage.access()
     })
 
     it('TC-007: Successful new user registration', () => {

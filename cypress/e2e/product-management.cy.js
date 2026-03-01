@@ -1,10 +1,10 @@
 
-const ProductPage = require('../support/pages/ProductPage')
+const ProductPage = require('../support/pages/productPage')
 const loginFactory = require('../fixtures/factories/loginFactory')
 const LoginPage = require('../support/pages/LoginPage')
 const productFactory = require('../fixtures/factories/productFactory')
 const productMessages = require('../fixtures/messages/product/productMessages')
-const { createUserAPI } = require('../services/userService')
+const userService = require('../services/userService')
 
 describe('Product Management', () => {
 
@@ -12,14 +12,14 @@ describe('Product Management', () => {
     const loginPage = new LoginPage()
 
     beforeEach(function () {
-        loginPage.visit()
-        createUserAPI(loginFactory.createLoginValid())
+        loginPage.access()
+        userService.createUserAPI(loginFactory.createLoginValid())
             .then(user => {
                 loginPage.login(user)
 
             })
 
-        productPage.visit()
+        productPage.access()
     })
 
     it('TC-010: Register new product successfully', function () {

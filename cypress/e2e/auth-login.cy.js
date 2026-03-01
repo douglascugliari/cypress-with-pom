@@ -1,5 +1,5 @@
 const LoginPage = require('../support/pages/LoginPage')
-const { createUserAPI } = require('../services/userService')
+const userService = require('../services/userService')
 const loginMessages = require('../fixtures/messages/login/loginMessages')
 const loginFactory = require('../fixtures/factories/loginFactory')
 
@@ -7,12 +7,12 @@ const loginPage = new LoginPage()
 
 describe('Login', () => {
     beforeEach(function () {
-        loginPage.visit()
+        loginPage.access()
 
     })
 
     it('TC-001: Login with valid credentials', function () {
-        createUserAPI(loginFactory.createLoginValid())
+        userService.createUserAPI(loginFactory.createLoginValid())
             .then(user => {
                 loginPage.login(user)
             })
@@ -37,7 +37,7 @@ describe('Login', () => {
     })
 
     it('TC-005: Redirection based on user profile', function () {
-        createUserAPI(loginFactory.createLoginValid())
+        userService.createUserAPI(loginFactory.createLoginValid())
             .then(user => {
                 loginPage.login(user)
             })

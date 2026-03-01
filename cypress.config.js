@@ -1,24 +1,33 @@
 const { defineConfig } = require('cypress')
+require('dotenv').config()
 
 module.exports = defineConfig({
-  projectId: 'your-project-id', // Para integração com Cypress Cloud (opcional)
-
+  projectId: process.env.CYPRESS_PROJECT_ID,
   reporter: 'cypress-multi-reporters',
   reporterOptions: {
     configFile: 'reporter-config.json',
   },
 
   e2e: {
-    baseUrl: 'https://front.serverest.dev',
+    // URL base do aplicativo
+    baseUrl: process.env.BASE_URL || 'https://front.serverest.dev',
+
+    // Environment variables
+    env: {
+      apiBaseUrl: process.env.API_BASE_URL || 'https://serverest.dev'
+    },
+
+    // Navegador Padrão
+    defaultBrowser: process.env.BROWSER || 'chrome',
 
     // Configurações de Viewport padrão
-    viewportWidth: 1280,
-    viewportHeight: 720,
+    viewportWidth: parseInt(process.env.VIEWPORT_WIDTH) || 1280,
+    viewportHeight: parseInt(process.env.VIEWPORT_HEIGHT) || 720,
 
     // Timeouts
-    defaultCommandTimeout: 10000,
-    requestTimeout: 10000,
-    responseTimeout: 10000,
+    defaultCommandTimeout: parseInt(process.env.TIMEOUT) || 10000,
+    requestTimeout: parseInt(process.env.REQUEST_TIMEOUT) || 10000,
+    responseTimeout: parseInt(process.env.RESPONSE_TIMEOUT) || 10000,
 
     // Screenshots e Vídeos
     screenshotOnRunFailure: true,
@@ -30,7 +39,7 @@ module.exports = defineConfig({
 
     // Retries apenas para CI (opcional)
     retries: {
-      runMode: 1,
+      runMode: parseInt(process.env.CI_RETRIES) || 1,
       openMode: 0
     },
 
